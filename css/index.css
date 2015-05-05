@@ -1,3 +1,9 @@
 body {
   padding-top: 60px;
 }
+ul {
+  overflow: hidden;
+}
+li {
+  float: left;
+}
