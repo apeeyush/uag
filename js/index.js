@@ -1,6 +1,8 @@
 $(function() {
   var refreshIntervalIds = []
   $(".js-start-emulation").click(function(){
+    $('.js-stop-emulation').prop('disabled', false);
+    $(".js-start-emulation").prop('disabled', true);
     var numUsers = $("#numUsers").val();
     $("#activity-log-container").empty();
     var divSize = 12/numUsers;
@@ -38,6 +40,8 @@ $(function() {
   });
 
   $(".js-stop-emulation").click(function(){
+    $('.js-stop-emulation').prop('disabled', true);
+    $(".js-start-emulation").prop('disabled', false);
     for(var i=0; i<refreshIntervalIds.length; i++){
       clearInterval(refreshIntervalIds[i]);
     }
